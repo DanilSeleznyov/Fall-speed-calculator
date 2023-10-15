@@ -1,0 +1,339 @@
+@import url('https://fonts.googleapis.com/css2?family=Sofia+Sans+Condensed:wght@400;700;1000&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    font-family: 'Sofia Sans Condensed', sans-serif;     
+    background: #9974ff;
+    display: flex;
+    justify-content: center;
+    height: 1000px;
+    align-items: center;
+}
+
+body {
+    font-family: 'Sofia Sans Condensed', sans-serif;
+}
+
+.app_wrapper {
+    background: white;
+    width: 1000px;
+    height: fit-content;
+    border-radius: 50px;
+    padding: 50px 100px;
+    text-align: center;
+}
+
+.shape_item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    border: 3px solid rgb(235, 235, 235);
+    border-radius: 6px;
+    box-shadow: 2px 2px 10px black;
+    max-height: 100px;
+    background: rgb(235, 235, 235);
+}
+
+.shape_item:hover {
+    /* border: 3px solid rgb(86, 175, 93); */
+    box-shadow: 1.5px 1.5px 7px black;
+}
+
+.shape_item img {
+    width: 105px;
+    height: 95px;
+    border-radius: 5px;
+}
+
+.shapes_list {
+    margin-top: 23px;
+    display: flex;
+    gap: 22px;
+    flex-wrap: wrap;
+    
+}
+
+.shapes_title {
+    color: #000000a3;
+    font-weight: 900;
+    font-size: 29px;
+}
+
+.shapes_desc{
+    font-size: 19px;
+}
+
+.shapes {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.selected {
+    box-shadow: 0px 0px 0px black;
+    border: 5px solid #9974ff;
+    background: #9974ff;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.selected:hover {
+    box-shadow: 0px 0px 0px black;
+}
+
+.shape_item_desc {
+    position: absolute;
+    display: none;
+    top: 91px;
+    background: #9974ff;
+    padding: 6px;
+    width: 115px;
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+
+}
+
+.inputs {
+    margin-top: 70px;
+    padding-left: 75px;
+    display: flex;
+    gap: 200px;
+}
+
+.app_input {
+    max-width: 225px;
+    height: 75px;
+    border: none;
+    background: rgb(235, 235, 235);
+    font-size: 37px;
+    padding-right: 75px;
+    border-radius: 35px;
+    text-align: right;
+    border-top-left-radius: 0;
+    box-shadow: 2px 2px 10px black;
+    color: #000000a3;
+    font-weight: 700;
+}
+
+.app_input::placeholder {
+    font-size: 40px;
+}
+
+.app_input[type="number"]::-webkit-inner-spin-button,
+.app_input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
+.input_label {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.input_inner_wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    position: relative;
+}
+
+.input_wrapper {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.input_details {
+    display: flex;
+    position: absolute;
+    left: 165px;
+    color: #fff;
+    max-height: 100px;
+    font-family: 'Sofia Sans Condensed', sans-serif;
+}
+
+.items_wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 8px;
+}
+
+.input_details[open] {
+    background: #9974ff;
+    border-radius: 10px;
+    padding: 10px 20px;
+    box-shadow: 2px 2px 5px black;
+}
+
+.details_item {
+    padding: 7px;
+    border-radius: 20px;
+    border: none;
+    background: #6832ff;
+    color: #fff;
+    font-weight: 700;
+    box-shadow: 2px 2px 5px black;
+}
+
+.details_item:hover {
+    box-shadow: 1px 1px 4px black;
+
+}
+
+.current_units {
+    cursor: pointer;
+    list-style: none;
+    background: #9974ff;
+    width: 37px;
+    height: 37px;
+    color: #fff;
+    font-weight: 700;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+.calculate {
+    border: none;
+    background: #9974ff;
+    padding: 20px 40px;
+    color: #fff;
+    font-weight: 700;
+    font-size: 28px;
+    border-radius: 40px;
+    margin-top: 20px;
+    box-shadow: 2px 2px 10px black;
+    font-family: 'Sofia Sans Condensed', sans-serif;
+}
+
+.calculate:hover {
+    box-shadow: 1.5px 1.5px 7px black;
+}
+
+.results{
+    margin-top: 75px;
+    text-align: left;
+}
+
+.result_wrapper{
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.result{
+    color: #9974ff;
+    font-size: 70px;
+}
+
+.current_shape{
+    list-style: none;
+    font-size: 23px;
+    margin-top: 15px;
+    height: 40px;
+}
+
+.current_shape_btn img{
+    position: absolute;
+    top: 6.5px;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+}
+
+.current_shape:hover{
+    font-size: 24px;
+
+}
+
+
+.current_shape_btn{
+    position: relative;
+    align-items: center;
+    gap: 7px;
+    border: none;
+    background: #9974ff;
+    padding: 5px 35px 5px 15px;
+    color: #fff;
+    font-weight: 700;
+    border-radius: 40px;
+    box-shadow: 2px 2px 10px black;
+    font-family: 'Sofia Sans Condensed', sans-serif;
+    font-size: 20px;
+}
+
+.current_shape_btn:hover{
+    box-shadow: 1.5px 1.5px 7px black;
+    transform: translate(1px, 1px);
+}
+
+@media screen and (max-width:1000px){
+    .app_wrapper{
+        padding: 50px 40px;
+        max-width: 1000px;
+    }
+
+    .inputs{
+        gap: initial;
+        padding: 0 50px 0 50px;
+        justify-content: space-between;
+    }
+}
+
+@media screen and (max-width:650px){
+    .inputs{
+        padding: 0;
+    }
+}
+
+@media screen and (max-width:600px){
+    .container{
+        height: fit-content;
+        padding: 100px 0 100px;
+    }
+
+    .app_wrapper{
+        height: fit-content;
+    }
+}
+
+@media screen and (max-width:550px){
+    .inputs{
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .results{
+        margin-top: 50px;
+    }
+
+    .calculate{
+        margin-top: 45px;
+    }
+}
+
+@media screen and (max-width:325px){
+    .app_wrapper{
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .result{
+        font-size: 55px;
+    }
+
+    .calculate{
+        padding: 15px 27px;
+    }
+}

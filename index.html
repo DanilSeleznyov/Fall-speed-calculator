@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div class="container" onclick="closeDetails()">
+        <div class="app_wrapper">
+            <div class="shapes">
+                <h2 class="shapes_title">Форма объекта</h2>
+                <p class="shapes_desc">(Какая из представленных фигур больше всего соответствует вашему объекту)</p>
+                <details class="shapes_details">
+                    <summary class="current_shape"><button class="current_shape_btn" onclick="openDetails()">Выбрать объект <img src="img\tap.png" alt=""></button></summary>
+                    <div class="shapes_list">
+                        <div class="shape_item" onclick="selectShape(0)" ondblclick="unselectShape()"><img src="img\shpere.png" alt="">
+                            <div class="shape_item_desc">Сфера</div>
+                        </div>
+                        <div class="shape_item" onclick="selectShape(1)" ondblclick="unselectShape()"><img src="img\hemisphere.png" alt="">
+                            <div class="shape_item_desc">Полусфера</div>
+                        </div>
+                        <div class="shape_item" onclick="selectShape(2)" ondblclick="unselectShape()"><img src="img\cube.png" alt="">
+                            <div class="shape_item_desc">Куб</div>
+                        </div>
+                        <div class="shape_item" onclick="selectShape(3)" ondblclick="unselectShape()"><img src="img\cylinder.png" alt="">
+                            <div class="shape_item_desc">Цилиндр <br>(1:1)</div>
+                        </div>
+                        <div class="shape_item" onclick="selectShape(4)" ondblclick="unselectShape()"><img src="img\longcylinder.png" alt="">
+                            <div class="shape_item_desc">Цилиндр <br>(длинный)</div>
+                        </div>
+                        <div class="shape_item" onclick="selectShape(5)" ondblclick="unselectShape()"><img src="img\cone.png" alt="">
+                            <div class="shape_item_desc">Конус (60°)</div>
+                        </div>
+                        <div class="shape_item" onclick="selectShape(6)" ondblclick="unselectShape()"><img src="img\raindrop.png" alt="">
+                            <div class="shape_item_desc">Капля</div>
+                        </div></div>
+                </details>
+                
+
+            </div>
+            <div class="inputs">
+                <div class="input_wrapper">
+                <p class="input_label">Масса объекта</p>
+                <div class="input_inner_wrapper">
+                    <input type="number" class="app_input weight">
+                    <details class="input_details">
+                        <summary class="current_units">КГ</summary>
+                        <div class="items_wrapper">
+                        <button class="details_item" onclick="setWeightUnits(0)">Г</button>
+                        <button class="details_item" onclick="setWeightUnits(1)">КГ</button>
+                        <button class="details_item" onclick="setWeightUnits(2)">Т</button>
+                        </div>
+                    </details>
+                </div>
+                </div>
+                <div class="input_wrapper">
+                <p class="input_label size_label">Диаметр объекта</p>
+                <div class="input_inner_wrapper">
+                    <input type="number" class="app_input size">
+                    <details class="input_details">
+                        <summary class="current_units">М</summary>
+                        <div class="items_wrapper">
+                        <button class="details_item" onclick="setSizeUnits(0)">ММ</button>
+                        <button class="details_item" onclick="setSizeUnits(1)">СМ</button>
+                        <button class="details_item" onclick="setSizeUnits(2)">М</button>
+                        </div>
+                    </details>
+                </div>
+                </div>
+            </div>
+            <button class="calculate" onclick="calcResult()">Рассчитать</button>
+            <div class="results">
+                <div class="result_wrapper">Максимальная скорость падения: <br> <span class="result">-- км/ч</span></div>
+            </div>
+        </div>
+    </div>
+    <script src="js/calculations.js"></script>
+    <script src="js/localStorage.js"></script>
+    <script src="js/interactive.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
