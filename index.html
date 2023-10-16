@@ -13,7 +13,7 @@
                 <h2 class="shapes_title">Форма объекта</h2>
                 <p class="shapes_desc">(Какая из представленных фигур больше всего соответствует вашему объекту)</p>
                 <details class="shapes_details">
-                    <summary class="current_shape"><button class="current_shape_btn" onclick="openDetails()">Выбрать объект <img src="img\tap.png" alt=""></button></summary>
+                    <summary class="current_shape" onclick="openDetails()"><button class="current_shape_btn">Выбрать объект 👆</button></summary>
                     <div class="shapes_list">
                         <div class="shape_item" onclick="selectShape(0)" ondblclick="unselectShape()"><img src="img\shpere.png" alt="">
                             <div class="shape_item_desc">Сфера</div>
@@ -27,15 +27,34 @@
                         <div class="shape_item" onclick="selectShape(3)" ondblclick="unselectShape()"><img src="img\cylinder.png" alt="">
                             <div class="shape_item_desc">Цилиндр <br>(1:1)</div>
                         </div>
-                        <div class="shape_item" onclick="selectShape(4)" ondblclick="unselectShape()"><img src="img\longcylinder.png" alt="">
-                            <div class="shape_item_desc">Цилиндр <br>(длинный)</div>
-                        </div>
-                        <div class="shape_item" onclick="selectShape(5)" ondblclick="unselectShape()"><img src="img\cone.png" alt="">
+                        <div class="shape_item" onclick="selectShape(4)" ondblclick="unselectShape()"><img src="img\cone.png" alt="">
                             <div class="shape_item_desc">Конус (60°)</div>
                         </div>
-                        <div class="shape_item" onclick="selectShape(6)" ondblclick="unselectShape()"><img src="img\raindrop.png" alt="">
-                            <div class="shape_item_desc">Капля</div>
-                        </div></div>
+                        <div class="shape_item" onclick="selectShape(5)" ondblclick="unselectShape()"><img src="img\raindrop.png" alt="">
+                            <div class="shape_item_desc">Каплевидное тело</div>
+                        </div>
+                        <div class="shape_item" onclick="selectShape(6)" ondblclick="unselectShape()"><img src="img\flatdisk.png" alt="">
+                            <div class="shape_item_desc">Диск (плоский)</div>
+                        </div>
+                        <div class="shape_item" onclick="selectShape(7)" ondblclick="unselectShape()"><img src="img\hollowhemisphere.png" alt="">
+                            <div class="shape_item_desc">Полусфера (полая)</div>
+                        </div>
+                        <div class="shape_item" onclick="selectShape(8)" ondblclick="unselectShape()"><img src="img\hollowhemisphere2.png" alt="">
+                            <div class="shape_item_desc">Полусфера (полая)</div>
+                        </div>
+                        <div class="shape_item" onclick="selectShape(9)" ondblclick="unselectShape()"><img src="img\elipsoid3X4.png" alt="">
+                            <div class="shape_item_desc">Эллипсоид (3:4)</div>
+                        </div>
+                        <div class="shape_item" onclick="selectShape(10)" ondblclick="unselectShape()"><img src="img\hollowhemisphere3X4_2.png" alt="">
+                            <div class="shape_item_desc">Полуэллипсоид (3:4)</div>
+                        </div>
+                        <div class="shape_item" onclick="selectShape(11)" ondblclick="unselectShape()"><img src="img\rectangularplate.png" alt="">
+                            <div class="shape_item_desc">Плита прямоугольная</div>
+                        </div>
+                        <div class="shape_item" onclick="selectShape(12)" ondblclick="unselectShape()"><img src="img\longtube.png" alt="">
+                            <div class="shape_item_desc">Труба</div>
+                        </div>
+                    </div>
                 </details>
                 
 
@@ -55,19 +74,34 @@
                     </details>
                 </div>
                 </div>
-                <div class="input_wrapper">
-                <p class="input_label size_label">Диаметр объекта</p>
-                <div class="input_inner_wrapper">
-                    <input type="number" class="app_input size">
-                    <details class="input_details">
-                        <summary class="current_units">М</summary>
-                        <div class="items_wrapper">
-                        <button class="details_item" onclick="setSizeUnits(0)">ММ</button>
-                        <button class="details_item" onclick="setSizeUnits(1)">СМ</button>
-                        <button class="details_item" onclick="setSizeUnits(2)">М</button>
+                <div class="input_outer_wrapper">
+                    <div class="input_wrapper">
+                        <p class="input_label size_label">Диаметр объекта</p>
+                        <div class="input_inner_wrapper">
+                            <input type="number" class="app_input size">
+                            <details class="input_details">
+                                <summary class="current_units">М</summary>
+                                <div class="items_wrapper">
+                                <button class="details_item" onclick="setSizeUnits(0)">ММ</button>
+                                <button class="details_item" onclick="setSizeUnits(1)">СМ</button>
+                                <button class="details_item" onclick="setSizeUnits(2)">М</button>
+                                </div>
+                            </details>
                         </div>
-                    </details>
-                </div>
+                    </div>
+                    <div class="extra_input_wrapper input_wrapper">
+                        <div class="input_inner_wrapper">
+                            <input type="number" class="app_input extra_size">
+                            <details class="input_details">
+                                <summary class="current_units">М</summary>
+                                <div class="items_wrapper">
+                                <button class="details_item" onclick="setExtraSizeUnits(0)">ММ</button>
+                                <button class="details_item" onclick="setExtraSizeUnits(1)">СМ</button>
+                                <button class="details_item" onclick="setExtraSizeUnits(2)">М</button>
+                                </div>
+                            </details>
+                        </div>
+                        </div>
                 </div>
             </div>
             <button class="calculate" onclick="calcResult()">Рассчитать</button>
@@ -76,6 +110,7 @@
             </div>
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="js/calculations.js"></script>
     <script src="js/localStorage.js"></script>
     <script src="js/interactive.js"></script>

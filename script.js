@@ -1,4 +1,5 @@
 let weightUnit = null
+let extraSizeUnit = null
 let sizeUnit = null
 let shape = null
 

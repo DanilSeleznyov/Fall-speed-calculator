@@ -1,4 +1,5 @@
 function saveUnits() {
+    extraSizeUnit = JSON.parse(localStorage.getItem('extraSizeUnit'))
     weightUnit = JSON.parse(localStorage.getItem('weightUnit'))
     sizeUnit = JSON.parse(localStorage.getItem('sizeUnit'))
     shape = JSON.parse(localStorage.getItem('shape'))
@@ -12,6 +13,12 @@ function saveUnits() {
     }
     if (sizeUnit !== null) {
         document.querySelectorAll('.current_units')[1].innerHTML = document.querySelectorAll('.details_item')[sizeUnit].textContent
+    }
+    if (extraSizeUnit !== null) {
+        if (document.querySelectorAll('.input_wrapper').length > 2) {
+            document.querySelectorAll('.current_units')[2].innerHTML = document.querySelectorAll('.details_item')[extraSizeUnit].textContent
+        }
+        
     }
 
 }
