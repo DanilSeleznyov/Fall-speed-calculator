@@ -289,10 +289,6 @@ body {
     display: none;
 }
 
-.size{
-    border-bottom-left-radius: 5px;
-}
-
 .extra_size{
     border-top-left-radius: 5px;
 }

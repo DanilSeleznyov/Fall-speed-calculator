@@ -5,18 +5,19 @@ function selectShape(index) {
     document.querySelectorAll('.shape_item')[index].classList.add('selected')
     document.querySelectorAll('.shape_item_desc')[index].style.display = 'block'
     document.querySelector('.size_label').innerHTML = shapesArr[index]
-    
+
     if (JSON.parse(localStorage.getItem('shape')) == 11) {
         document.querySelector('.extra_input_wrapper').style.display = 'none'
         addExtraSizeInput()
 
-    }else if(JSON.parse(localStorage.getItem('shape')) == 12){
+    }else if(JSON.parse(localStorage.getItem('shape')) == 12){        
         document.querySelector('.extra_input_wrapper').style.display = 'none'
         addExtraSizeInput()
 
     }else{
         if (document.querySelectorAll('.input_wrapper').length > 2) {
             document.querySelector('.extra_input_wrapper').style.display = 'none'
+            document.querySelectorAll('.app_input')[1].style.cssText = 'border-bottom-left-radius: 35px;'
         }
     }
 
@@ -60,6 +61,7 @@ function openDetails() {
 
 function addExtraSizeInput() {
     document.querySelector('.extra_input_wrapper').style.display = 'block'
+    document.querySelectorAll('.app_input')[1].style.cssText = 'border-bottom-left-radius: 5px;'
 }
 
 if (JSON.parse(localStorage.getItem('shape')) == 11) {
