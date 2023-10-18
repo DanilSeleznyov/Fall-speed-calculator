@@ -1,7 +1,7 @@
 function selectShape(index) {
     document.querySelectorAll('.shape_item_desc').forEach(elem => elem.style.display = 'none')
     document.querySelectorAll('.shape_item').forEach(el => el.classList.remove('selected'))
-    localStorage.setItem('shape', index)
+    localStorage.setItem('shape', JSON.stringify(index))
     document.querySelectorAll('.shape_item')[index].classList.add('selected')
     document.querySelectorAll('.shape_item_desc')[index].style.display = 'block'
     document.querySelector('.size_label').innerHTML = shapesArr[index]
@@ -20,8 +20,20 @@ function selectShape(index) {
             document.querySelectorAll('.app_input')[1].style.cssText = 'border-bottom-left-radius: 35px;'
         }
     }
+}
 
+function selectLocation(index) {
+    document.querySelectorAll('.location_item_desc').forEach(elem => elem.style.display = 'none')
+    document.querySelectorAll('.location_item').forEach(el => el.classList.remove('selected'))
+    localStorage.setItem('locations', JSON.stringify(index))
+    document.querySelectorAll('.location_item')[index].classList.add('selected')
+    document.querySelectorAll('.location_item_desc')[index].style.display = 'block'
+}
 
+function unselectLocation() {
+    document.querySelectorAll('.location_item_desc').forEach(elem => elem.style.display = 'none')
+    document.querySelectorAll('.location_item').forEach(el => el.classList.remove('selected'))
+    localStorage.setItem('locations', JSON.stringify(null))
 }
 
 function unselectShape() {
@@ -49,13 +61,23 @@ function closeDetails() {
 
 }
 
-function openDetails() {
+function openShapesDetails() {
     document.querySelector('.current_shape_btn').innerHTML = 'Закрыть'
     document.querySelector('.current_shape_btn').style.cssText = 'background:#000000c7;'
     document.querySelector('.shapes_details').open = !document.querySelector('.shapes_details').open;
     if (!document.querySelector('.shapes_details').open) {
         document.querySelector('.current_shape_btn').innerHTML = 'Выбрать объект 👆'
         document.querySelector('.current_shape_btn').style.cssText = 'background:#9974ff;'
+    }
+}
+
+function openLocationsDetails() {
+    document.querySelector('.current_location_btn').innerHTML = 'Закрыть'
+    document.querySelector('.current_location_btn').style.cssText = 'background:#000000c7;'
+    document.querySelector('.locations_details').open = !document.querySelector('.locations_details').open;
+    if (!document.querySelector('.locations_details').open) {
+        document.querySelector('.current_location_btn').innerHTML = 'Выбрать среду 👆'
+        document.querySelector('.current_location_btn').style.cssText = 'background:#9974ff;'
     }
 }
 

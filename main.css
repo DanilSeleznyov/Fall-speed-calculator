@@ -28,7 +28,7 @@ body {
     text-align: center;
 }
 
-.shape_item {
+.item {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -36,22 +36,34 @@ body {
     border: 3px solid rgb(235, 235, 235);
     border-radius: 6px;
     box-shadow: 2px 2px 10px black;
-    max-height: 100px;
+    max-height: 101px;
     background: rgb(235, 235, 235);
 }
 
-.shape_item:hover {
-    /* border: 3px solid rgb(86, 175, 93); */
+.item:hover {
     box-shadow: 1.5px 1.5px 7px black;
 }
 
-.shape_item img {
+.item img {
     width: 105px;
     height: 95px;
     border-radius: 5px;
 }
 
-.shapes_list {
+.location_item{
+    max-height: 106px;
+}
+
+.location_item img{
+    width: 100px;
+    height: 100px;
+}
+
+.location_item_desc{
+    max-width: 110px;
+}
+
+.list {
     margin-top: 23px;
     display: flex;
     gap: 22px;
@@ -59,13 +71,13 @@ body {
     
 }
 
-.shapes_title {
+.title {
     color: #000000a3;
     font-weight: 900;
     font-size: 29px;
 }
 
-.shapes_desc{
+.desc{
     font-size: 19px;
 }
 
@@ -88,7 +100,8 @@ body {
     box-shadow: 0px 0px 0px black;
 }
 
-.shape_item_desc {
+
+.item_desc{
     position: absolute;
     display: none;
     top: 91px;
@@ -100,7 +113,10 @@ body {
     font-weight: 700;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
+}
 
+.item_desc:hover{
+    z-index: 1;
 }
 
 .inputs {
@@ -191,6 +207,10 @@ body {
 
 }
 
+.locations{
+    margin-bottom: 30px;
+}
+
 .current_units {
     cursor: pointer;
     list-style: none;
@@ -244,14 +264,14 @@ body {
     font-size: 70px;
 }
 
-.current_shape{
+.current{
     list-style: none;
     font-size: 23px;
     margin-top: 15px;
     height: 40px;
 }
 
-.current_shape_btn img{
+.current_btn img{
     position: absolute;
     top: 6.5px;
     right: 10px;
@@ -259,13 +279,13 @@ body {
     height: 20px;
 }
 
-.current_shape:hover{
+.current:hover{
     font-size: 24px;
 
 }
 
 
-.current_shape_btn{
+.current_btn{
     position: relative;
     align-items: center;
     gap: 7px;
@@ -280,7 +300,7 @@ body {
     font-size: 20px;
 }
 
-.current_shape_btn:hover{
+.current_btn:hover{
     box-shadow: 1.5px 1.5px 7px black;
     transform: translate(1px, 1px);
 }

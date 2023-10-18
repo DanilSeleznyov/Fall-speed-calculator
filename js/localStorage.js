@@ -3,6 +3,11 @@ function saveUnits() {
     weightUnit = JSON.parse(localStorage.getItem('weightUnit'))
     sizeUnit = JSON.parse(localStorage.getItem('sizeUnit'))
     shape = JSON.parse(localStorage.getItem('shape'))
+    locations = JSON.parse(localStorage.getItem('locations'))
+    if (locations !== null) {
+        document.querySelectorAll('.location_item')[locations].classList.add('selected')
+        document.querySelectorAll('.location_item_desc')[locations].style.display = 'block'
+    }
     if (shape !== null) {
         document.querySelectorAll('.shape_item')[shape].classList.add('selected')
         document.querySelectorAll('.shape_item_desc')[shape].style.display = 'block'
@@ -26,7 +31,8 @@ function saveUnits() {
 document.addEventListener('DOMContentLoaded', () => {
     if (localStorage.getItem('weightUnit') &&
         localStorage.getItem('sizeUnit') &&
-        localStorage.getItem('shape')) {
+        localStorage.getItem('shape') &&
+        localStorage.getItem('locations')) {
         saveUnits()
     }
 })

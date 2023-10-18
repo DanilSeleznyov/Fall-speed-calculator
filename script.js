@@ -1,7 +1,8 @@
-let weightUnit = null
-let extraSizeUnit = null
-let sizeUnit = null
-let shape = null
+let weightUnit = null;
+let extraSizeUnit = null;
+let sizeUnit = null;
+let shape = null;
+let locations = null;
 
 if (localStorage.getItem('shape') == undefined &&
     localStorage.getItem('sizeUnit') == undefined &&

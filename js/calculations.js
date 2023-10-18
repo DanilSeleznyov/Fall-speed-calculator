@@ -8,7 +8,6 @@ let maxFallSpeed;
 let resistRatio;
 let extraDiameter;
 let eD;
-
 let shapesArr = ['Диаметр',
     'Диаметр (основания)',
     'Длина ребра',
@@ -26,8 +25,8 @@ let tubeSizes = [0.999999, 2, 3, 5, 10, 20, 40, Infinity]
 let unitsWeightMultipliers = [0.001, 1, 1000]
 let unitsSizeMultipliers = [0.001, 0.01, 1]
 let airResistRatioArr;
-let g = 9.81
-let airDensityEarth = 1.275
+let g_Arr = [9.81, 3.711, 8.87, 1.352, 9.81, 9.81]
+let airDensity = [1.275, 0.02, 67, 1, 997, 1030]
 
 
 function calcResult() {
@@ -40,25 +39,33 @@ function calcResult() {
     if (JSON.parse(localStorage.getItem('shape')) == 2) {
 
         squareSq = d ** 2
-        maxFallSpeed = Math.sqrt((2 * m * g) / (airDensityEarth * squareSq * airResistRatioArr[JSON.parse(localStorage.getItem('shape'))]))
+        maxFallSpeed = Math.sqrt((2 * m * g_Arr[JSON.parse(localStorage.getItem('locations'))]) / (airDensity[JSON.parse(localStorage.getItem('locations'))] * squareSq * airResistRatioArr[JSON.parse(localStorage.getItem('shape'))]))
 
     } else if (JSON.parse(localStorage.getItem('shape')) == 11) {
 
         eD = extraDiameter * unitsSizeMultipliers[JSON.parse(localStorage.getItem('extraSizeUnit')) - 3]
-        maxFallSpeed = Math.sqrt((2 * m * g) / (airDensityEarth * (d * eD) * airResistRatioArr[JSON.parse(localStorage.getItem('shape'))]))
+        maxFallSpeed = Math.sqrt((2 * m * g_Arr[JSON.parse(localStorage.getItem('locations'))]) / (airDensity[JSON.parse(localStorage.getItem('locations'))] * (d * eD) * airResistRatioArr[JSON.parse(localStorage.getItem('shape'))]))
 
     } else if (JSON.parse(localStorage.getItem('shape')) == 12) {
 
         eD = extraDiameter * unitsSizeMultipliers[JSON.parse(localStorage.getItem('extraSizeUnit')) - 3]
-        maxFallSpeed = Math.sqrt((2 * m * g) / (airDensityEarth * (d * eD) * airResistRatioArr[JSON.parse(localStorage.getItem('shape'))]))
+        maxFallSpeed = Math.sqrt((2 * m * g_Arr[JSON.parse(localStorage.getItem('locations'))]) / (airDensity[JSON.parse(localStorage.getItem('locations'))] * (d * eD) * airResistRatioArr[JSON.parse(localStorage.getItem('shape'))]))
 
     } else {
 
         circleSq = ((d / 2) ** 2) * Math.PI
-        maxFallSpeed = Math.sqrt((2 * m * g) / (airDensityEarth * circleSq * airResistRatioArr[JSON.parse(localStorage.getItem('shape'))]))
+        maxFallSpeed = Math.sqrt((2 * m * g_Arr[JSON.parse(localStorage.getItem('locations'))]) / (airDensity[JSON.parse(localStorage.getItem('locations'))] * circleSq * airResistRatioArr[JSON.parse(localStorage.getItem('shape'))]))
 
     }
-    document.querySelector('.result').innerHTML = `${(maxFallSpeed * 3.6).toFixed(1)} км/ч`
+    if (isNaN((maxFallSpeed * 3.6).toFixed(1))) {
+        noValueError()
+        return
+    }else if(isFinite((maxFallSpeed * 3.6).toFixed(1))){
+        document.querySelector('.result').innerHTML = `${(maxFallSpeed * 3.6).toFixed(1)} км/ч`
+    }else{
+        noValueError()
+    }
+    
 }
 
 function calcResistRatio() {
