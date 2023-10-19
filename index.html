@@ -10,107 +10,109 @@
     <div class="container" onclick="closeDetails()">
         <div class="app_wrapper">
             <div class="locations">
-                <h2 class="locations_title title">Среда</h2>
-                    <p class="locations_desc desc">(В каких условиях будет происходить падение объекта)</p>
+                <h2 class="locations_title title" textValue="locations_title">Среда</h2>
+                    <p class="locations_desc desc" textValue="locations_desc">(В каких условиях будет происходить падение объекта)</p>
                     <details class="locations_details app_details">
-                        <summary class="current_location current" onclick="openLocationsDetails()"><button class="current_location_btn current_btn">Выбрать среду 👆</button></summary>
+                        <summary class="open_location open" onclick="openLocationsDetails()">
+                            <button class="open_location_btn open_btn" textValue="location_btn">Выбрать среду 👆</button>
+                        </summary>
                         <div class="locations_list list">
                             <div class="location_item item" onclick="selectLocation(0)" ondblclick="unselectLocation()"><img src="img\earth.jpg" alt="">
-                                <div class="location_item_desc item_desc">Земля</div>
+                                <div class="location_item_desc item_desc" textValue="earth">Земля</div>
                             </div>
                             <div class="location_item item" onclick="selectLocation(1)" ondblclick="unselectLocation()"><img src="img\mars.jpg" alt="">
-                                <div class="location_item_desc item_desc">Марс</div>
+                                <div class="location_item_desc item_desc" textValue="mars">Марс</div>
                             </div>
                             <div class="location_item item" onclick="selectLocation(2)" ondblclick="unselectLocation()"><img src="img\venus.jpg" alt="">
-                                <div class="location_item_desc item_desc">Венера</div>
+                                <div class="location_item_desc item_desc" textValue="venus">Венера</div>
                             </div>
                             <div class="location_item item" onclick="selectLocation(3)" ondblclick="unselectLocation()"><img src="img\titan.jpg" alt="">
-                                <div class="location_item_desc item_desc">Титан</div>
+                                <div class="location_item_desc item_desc" textValue="titan">Титан</div>
                             </div>
                             <div class="location_item item" onclick="selectLocation(4)" ondblclick="unselectLocation()"><img src="img\Water.jpg" alt="">
-                                <div class="location_item_desc item_desc">Вода</div>
+                                <div class="location_item_desc item_desc" textValue="water">Вода</div>
                             </div>
                             <div class="location_item item" onclick="selectLocation(5)" ondblclick="unselectLocation()"><img src="img\Water_salty.jpg" alt="">
-                                <div class="location_item_desc item_desc">Солёная вода</div>
+                                <div class="location_item_desc item_desc" textValue="salty_water">Солёная вода</div>
                             </div>
                         </div>
                     </details>
                 
             </div>
             <div class="shapes">
-                <h2 class="shapes_title title">Форма объекта</h2>
-                <p class="shapes_desc desc">(Какая из представленных фигур больше всего соответствует вашему объекту)</p>
+                <h2 class="shapes_title title" textValue="shapes_title">Форма объекта</h2>
+                <p class="shapes_desc desc" textValue="shapes_desc">(Какая из представленных фигур больше всего соответствует вашему объекту)</p>
                 <details class="shapes_details app_details">
-                    <summary class="current_shape current" onclick="openShapesDetails()"><button class="current_shape_btn current_btn">Выбрать объект 👆</button></summary>
+                    <summary class="open_shape open" onclick="openShapesDetails()"><button class="open_shape_btn open_btn" textValue="shape_btn">Выбрать объект 👆</button></summary>
                     <div class="shapes_list list">
                         <div class="shape_item item" onclick="selectShape(0)" ondblclick="unselectShape()"><img src="img\shpere.png" alt="">
-                            <div class="shape_item_desc item_desc">Сфера</div>
+                            <div class="shape_item_desc item_desc" textValue="sphere">Сфера</div>
                         </div>
                         <div class="shape_item item" onclick="selectShape(1)" ondblclick="unselectShape()"><img src="img\hemisphere.png" alt="">
-                            <div class="shape_item_desc item_desc">Полусфера</div>
+                            <div class="shape_item_desc item_desc" textValue="hemisphere">Полусфера</div>
                         </div>
                         <div class="shape_item item" onclick="selectShape(2)" ondblclick="unselectShape()"><img src="img\cube.png" alt="">
-                            <div class="shape_item_desc item_desc">Куб</div>
+                            <div class="shape_item_desc item_desc" textValue="cube">Куб</div>
                         </div>
                         <div class="shape_item item" onclick="selectShape(3)" ondblclick="unselectShape()"><img src="img\cylinder.png" alt="">
-                            <div class="shape_item_desc item_desc">Цилиндр <br>(1:1)</div>
+                            <div class="shape_item_desc item_desc" textValue="cylinder">Цилиндр <br>(1:1)</div>
                         </div>
                         <div class="shape_item item" onclick="selectShape(4)" ondblclick="unselectShape()"><img src="img\cone.png" alt="">
-                            <div class="shape_item_desc item_desc">Конус (60°)</div>
+                            <div class="shape_item_desc item_desc" textValue="cone">Конус (60°)</div>
                         </div>
                         <div class="shape_item item" onclick="selectShape(5)" ondblclick="unselectShape()"><img src="img\raindrop.png" alt="">
-                            <div class="shape_item_desc item_desc">Каплевидное тело</div>
+                            <div class="shape_item_desc item_desc" textValue="drop">Каплевидное тело</div>
                         </div>
                         <div class="shape_item item" onclick="selectShape(6)" ondblclick="unselectShape()"><img src="img\flatdisk.png" alt="">
-                            <div class="shape_item_desc item_desc">Диск (плоский)</div>
+                            <div class="shape_item_desc item_desc" textValue="disk">Диск (плоский)</div>
                         </div>
                         <div class="shape_item item" onclick="selectShape(7)" ondblclick="unselectShape()"><img src="img\hollowhemisphere.png" alt="">
-                            <div class="shape_item_desc item_desc">Полусфера (полая)</div>
+                            <div class="shape_item_desc item_desc" textValue="hollowhemisphere">Полусфера (полая)</div>
                         </div>
                         <div class="shape_item item" onclick="selectShape(8)" ondblclick="unselectShape()"><img src="img\hollowhemisphere2.png" alt="">
-                            <div class="shape_item_desc item_desc">Полусфера (полая)</div>
+                            <div class="shape_item_desc item_desc" textValue="hollowhemisphere">Полусфера (полая)</div>
                         </div>
                         <div class="shape_item item" onclick="selectShape(9)" ondblclick="unselectShape()"><img src="img\elipsoid3X4.png" alt="">
-                            <div class="shape_item_desc item_desc">Эллипсоид (3:4)</div>
+                            <div class="shape_item_desc item_desc" textValue="ellipsoid3X4">Эллипсоид (3:4)</div>
                         </div>
-                        <div class="shape_item item" onclick="selectShape(10)" ondblclick="unselectShape()"><img src="img\hollowhemisphere3X4_2.png" alt="">
-                            <div class="shape_item_desc item_desc">Полуэллипсоид (3:4)</div>
+                        <div class="shape_item item" onclick="selectShape(10)" ondblclick="unselectShape()"><img src="img\semiellipsoid3X4.png" alt="">
+                            <div class="shape_item_desc item_desc" textValue="semiellipsoid3X4">Полуэллипсоид (3:4)</div>
                         </div>
                         <div class="shape_item item" onclick="selectShape(11)" ondblclick="unselectShape()"><img src="img\rectangularplate.png" alt="">
-                            <div class="shape_item_desc item_desc">Плита прямоугольная</div>
+                            <div class="shape_item_desc item_desc" textValue="rectangularplate">Плита прямоугольная</div>
                         </div>
                         <div class="shape_item item" onclick="selectShape(12)" ondblclick="unselectShape()"><img src="img\longtube.png" alt="">
-                            <div class="shape_item_desc item_desc">Труба</div>
+                            <div class="shape_item_desc item_desc" textValue="longtube">Труба</div>
                         </div>
                     </div>
                 </details>
             </div>
             <div class="inputs">
                 <div class="input_wrapper">
-                <p class="input_label">Масса объекта</p>
+                <p class="input_label" textValue="weight_label">Масса объекта</p>
                 <div class="input_inner_wrapper">
                     <input type="number" class="app_input weight">
                     <details class="input_details">
-                        <summary class="current_units">КГ</summary>
+                        <summary class="open_units" textValue="kg">КГ</summary>
                         <div class="items_wrapper">
-                        <button class="details_item" onclick="setWeightUnits(0)">Г</button>
-                        <button class="details_item" onclick="setWeightUnits(1)">КГ</button>
-                        <button class="details_item" onclick="setWeightUnits(2)">Т</button>
+                        <button class="details_item" onclick="setWeightUnits(0)" textValue="g">Г</button>
+                        <button class="details_item" onclick="setWeightUnits(1)" textValue="kg">КГ</button>
+                        <button class="details_item" onclick="setWeightUnits(2)" textValue="tons">Т</button>
                         </div>
                     </details>
                 </div>
                 </div>
                 <div class="input_outer_wrapper">
                     <div class="input_wrapper">
-                        <p class="input_label size_label">Диаметр объекта</p>
+                        <p class="input_label size_label" textValue="size_label">Диаметр объекта</p>
                         <div class="input_inner_wrapper">
                             <input type="number" class="app_input size">
                             <details class="input_details">
-                                <summary class="current_units">М</summary>
+                                <summary class="open_units" textValue="m">М</summary>
                                 <div class="items_wrapper">
-                                <button class="details_item" onclick="setSizeUnits(0)">ММ</button>
-                                <button class="details_item" onclick="setSizeUnits(1)">СМ</button>
-                                <button class="details_item" onclick="setSizeUnits(2)">М</button>
+                                <button class="details_item" onclick="setSizeUnits(0)" textValue="mm">ММ</button>
+                                <button class="details_item" onclick="setSizeUnits(1)" textValue="sm">СМ</button>
+                                <button class="details_item" onclick="setSizeUnits(2)" textValue="m">М</button>
                                 </div>
                             </details>
                         </div>
@@ -119,33 +121,64 @@
                         <div class="input_inner_wrapper">
                             <input type="number" class="app_input extra_size">
                             <details class="input_details">
-                                <summary class="current_units">М</summary>
+                                <summary class="open_units" textValue="m">М</summary>
                                 <div class="items_wrapper">
-                                <button class="details_item" onclick="setExtraSizeUnits(0)">ММ</button>
-                                <button class="details_item" onclick="setExtraSizeUnits(1)">СМ</button>
-                                <button class="details_item" onclick="setExtraSizeUnits(2)">М</button>
+                                <button class="details_item" onclick="setExtraSizeUnits(0)" textValue="mm">ММ</button>
+                                <button class="details_item" onclick="setExtraSizeUnits(1)" textValue="sm">СМ</button>
+                                <button class="details_item" onclick="setExtraSizeUnits(2)" textValue="m">М</button>
                                 </div>
                             </details>
                         </div>
                         </div>
                 </div>
             </div>
-            <button class="calculate" onclick="calcResult()">Рассчитать</button>
+            <button class="calculate" onclick="calcResult()" textValue="calculate">Рассчитать</button>
             <div class="results">
-                <div class="result_wrapper">Максимальная скорость падения: <br> <span class="result">-- км/ч</span></div>
+                <div class="result_wrapper"><p class="result_wrapper_text" textValue="maxSpeed">Максимальная скорость падения:</p><span class="result" textValue="kmph">-- км/ч</span></div>
+            </div>
+            <div class="modal_wrapper">
+                <div class="modal_settings">
+                    <h2 class="modal_title" textValue="settings">Настройки</h2>
+                    <div class="underline"></div>
+                    <h3 class="language_title" textValue="language">
+                        Язык
+                    </h3>
+                    <details class="languages_details">
+                        <summary class="languages_details_title">
+                            <button class="languages_details_open open_btn" onclick="openLanguageDetails()">
+                               <p class="current_language">Русский</p>
+                            </button>
+                        </summary>
+                        <div class="languages_list">
+                            <button class="language_item" onclick="changeLanguage('ru', 0)"><img src="img/russia.png" alt="" class="flag">Русский</button>
+                            <button class="language_item" onclick="changeLanguage('ua', 1)"><img src="img/ukraine.png" alt="" class="flag">Українська</button>
+                            <button class="language_item" onclick="changeLanguage('en', 2)"><img src="img/united-kingdom.png" alt="" class="flag">English</button>
+                        </div>
+                    </details>
+                    <div class="modal_settings_bottom">
+                        <button class="сlose_modal_settings open_btn" textValue="closeSettings" onclick="closeSettingsModal()">Закрыть</button>
+                    </div>
+                </div>
             </div>
             <div class="app_bottom">
                 <div class="settings">
-                    <button class="settings_btn"></button>
+                    <button class="settings_btn" onclick="showModalSettings()">
+                        <div class="settings_btn_text" textValue="settings">Настройки</div>
+                         <img src="img/settings.png" alt="">
+                    </button>
                 </div>
             </div>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/languagePack.js"></script>
+    <script src="js/changeLanguage.js"></script>
     <script src="js/calculations.js"></script>
     <script src="js/localStorage.js"></script>
     <script src="js/interactive.js"></script>
     <script src="js/error.js"></script>
     <script src="script.js"></script>
+    <script src="js/localStorage.js"></script>
+
 </body>
 </html>

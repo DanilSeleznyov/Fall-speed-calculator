@@ -1,4 +1,14 @@
 function selectShape(index) {
+    shapesArr = [languages[JSON.parse(localStorage.getItem("language"))].js.diameter,
+    languages[JSON.parse(localStorage.getItem("language"))].js.baseDiameter,
+    languages[JSON.parse(localStorage.getItem("language"))].js.edgeLength,
+    languages[JSON.parse(localStorage.getItem("language"))].js.baseDiameter,
+    languages[JSON.parse(localStorage.getItem("language"))].js.baseDiameter,
+    languages[JSON.parse(localStorage.getItem("language"))].js.bodyThickness,
+    languages[JSON.parse(localStorage.getItem("language"))].js.diameter, languages[JSON.parse(localStorage.getItem("language"))].js.baseDiameter,
+    languages[JSON.parse(localStorage.getItem("language"))].js.baseDiameter, languages[JSON.parse(localStorage.getItem("language"))].js.bodyLength,
+    languages[JSON.parse(localStorage.getItem("language"))].js.baseLength, languages[JSON.parse(localStorage.getItem("language"))].js.lengthAndWidth,
+    languages[JSON.parse(localStorage.getItem("language"))].js.lengthAndThickness,]
     document.querySelectorAll('.shape_item_desc').forEach(elem => elem.style.display = 'none')
     document.querySelectorAll('.shape_item').forEach(el => el.classList.remove('selected'))
     localStorage.setItem('shape', JSON.stringify(index))
@@ -44,41 +54,64 @@ function unselectShape() {
 
 function setWeightUnits(index) {
     localStorage.setItem('weightUnit', JSON.stringify(index))
-    document.querySelectorAll('.current_units')[0].innerHTML = document.querySelectorAll('.details_item')[index].textContent
+    document.querySelectorAll('.open_units')[0].innerHTML = document.querySelectorAll('.details_item')[index].textContent
 }
 function setSizeUnits(index) {
     localStorage.setItem('sizeUnit', JSON.stringify(index + 3))
-    document.querySelectorAll('.current_units')[1].innerHTML = document.querySelectorAll('.details_item')[index + 3].textContent
+    document.querySelectorAll('.open_units')[1].innerHTML = document.querySelectorAll('.details_item')[index + 3].textContent
 }
 
 function setExtraSizeUnits(index) {
     localStorage.setItem('extraSizeUnit', JSON.stringify(index + 3))
-    document.querySelectorAll('.current_units')[2].innerHTML = document.querySelectorAll('.details_item')[index + 6].textContent
+    document.querySelectorAll('.open_units')[2].innerHTML = document.querySelectorAll('.details_item')[index + 6].textContent
 }
 
 function closeDetails() {
     document.querySelectorAll('.input_details').forEach(el => el.removeAttribute('open'))
+}
 
+function closeMainDetails() {
+    document.querySelectorAll('.shapes_details').forEach(el => el.removeAttribute('open'))
+    document.querySelectorAll('.locations_details').forEach(el => el.removeAttribute('open'))
+    document.querySelector('.open_shape_btn').style.cssText = 'background:#9974ff;'
+    document.querySelector('.open_location_btn').style.cssText = 'background:#9974ff;'
+}
+
+function closeSettingsModal() {
+    document.querySelector('.modal_settings').style.display = 'none'
+    document.querySelector('.languages_details').close
 }
 
 function openShapesDetails() {
-    document.querySelector('.current_shape_btn').innerHTML = 'Закрыть'
-    document.querySelector('.current_shape_btn').style.cssText = 'background:#000000c7;'
+    document.querySelector('.open_shape_btn').innerHTML = languages[JSON.parse(localStorage.getItem("language"))].js.closeBtn
+    document.querySelector('.open_shape_btn').style.cssText = 'background:#000000c7;'
     document.querySelector('.shapes_details').open = !document.querySelector('.shapes_details').open;
     if (!document.querySelector('.shapes_details').open) {
-        document.querySelector('.current_shape_btn').innerHTML = 'Выбрать объект 👆'
-        document.querySelector('.current_shape_btn').style.cssText = 'background:#9974ff;'
+        document.querySelector('.open_shape_btn').innerHTML = languages[JSON.parse(localStorage.getItem("language"))].shape_btn
+        document.querySelector('.open_shape_btn').style.cssText = 'background:#9974ff;'
     }
 }
 
 function openLocationsDetails() {
-    document.querySelector('.current_location_btn').innerHTML = 'Закрыть'
-    document.querySelector('.current_location_btn').style.cssText = 'background:#000000c7;'
+    document.querySelector('.open_location_btn').innerHTML = languages[JSON.parse(localStorage.getItem("language"))].js.closeBtn
+    document.querySelector('.open_location_btn').style.cssText = 'background:#000000c7;'
     document.querySelector('.locations_details').open = !document.querySelector('.locations_details').open;
     if (!document.querySelector('.locations_details').open) {
-        document.querySelector('.current_location_btn').innerHTML = 'Выбрать среду 👆'
-        document.querySelector('.current_location_btn').style.cssText = 'background:#9974ff;'
+        document.querySelector('.open_location_btn').innerHTML = languages[JSON.parse(localStorage.getItem("language"))].location_btn
+        document.querySelector('.open_location_btn').style.cssText = 'background:#9974ff;'
     }
+}
+
+function openLanguageDetails() {
+    document.querySelector('.languages_details').open = !document.querySelector('.languages_details').open;
+    document.querySelector('.languages_details').classList.add('opened')
+    if (!document.querySelector('.languages_details').open) {
+        document.querySelector('.languages_details').classList.remove('opened')
+    }
+}
+
+function showModalSettings() {
+    document.querySelector('.modal_settings').style.display = 'block'
 }
 
 function addExtraSizeInput() {

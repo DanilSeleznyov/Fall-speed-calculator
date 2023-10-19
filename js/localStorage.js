@@ -14,14 +14,14 @@ function saveUnits() {
         document.querySelector('.size_label').innerHTML = shapesArr[shape]
     }
     if (weightUnit !== null) {
-        document.querySelectorAll('.current_units')[0].innerHTML = document.querySelectorAll('.details_item')[weightUnit].textContent
+        document.querySelectorAll('.open_units')[0].innerHTML = document.querySelectorAll('.details_item')[weightUnit].textContent
     }
     if (sizeUnit !== null) {
-        document.querySelectorAll('.current_units')[1].innerHTML = document.querySelectorAll('.details_item')[sizeUnit].textContent
+        document.querySelectorAll('.open_units')[1].innerHTML = document.querySelectorAll('.details_item')[sizeUnit].textContent
     }
     if (extraSizeUnit !== null) {
         if (document.querySelectorAll('.input_wrapper').length > 2) {
-            document.querySelectorAll('.current_units')[2].innerHTML = document.querySelectorAll('.details_item')[extraSizeUnit].textContent
+            document.querySelectorAll('.open_units')[2].innerHTML = document.querySelectorAll('.details_item')[extraSizeUnit].textContent
         }
         
     }
@@ -34,6 +34,9 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.getItem('shape') &&
         localStorage.getItem('locations')) {
         saveUnits()
+    }
+    if (JSON.parse(localStorage.getItem("language")) && JSON.parse(localStorage.getItem("languageId"))) {
+        changeLanguage(JSON.parse(localStorage.getItem("language")), JSON.parse(localStorage.getItem("languageId")))
     }
 })
 
