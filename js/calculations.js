@@ -26,7 +26,7 @@ let shapesArr = [languages[JSON.parse(localStorage.getItem("language"))].js.diam
 
 
 let airResistRatioTube = [0.64, 0.68, 0.72, 0.74, 0.82, 0.91, 0.98, 1.2]
-let tubeSizes = [0.999999, 2, 3, 5, 10, 20, 40, Infinity]
+let tubeSizes = [0.99, 2, 3, 5, 10, 20, 40, Infinity]
 let unitsWeightMultipliers = [0.001, 1, 1000]
 let unitsSizeMultipliers = [0.001, 0.01, 1]
 let g_Arr = [9.81, 3.711, 8.87, 1.352, 9.81, 9.81]
@@ -55,8 +55,16 @@ function calcResult() {
             )
 
     } else if (JSON.parse(localStorage.getItem('shape')) == 12) {
-
         eD = extraDiameter * unitsSizeMultipliers[JSON.parse(localStorage.getItem('extraSizeUnit')) - 3]
+        if ((d / eD) < 1) {
+            Swal.fire({
+                title: languages[JSON.parse(localStorage.getItem("language"))].js.calcErrorTitle,
+                text: languages[JSON.parse(localStorage.getItem("language"))].js.sizeError,
+                icon: 'error',
+                confirmButtonText: languages[JSON.parse(localStorage.getItem("language"))].js.confirmBtn,
+            })
+            return
+        }
         maxFallSpeed = Math.sqrt(
             (2 * m * g_Arr[JSON.parse(localStorage.getItem('locations'))]) / (airDensity[JSON.parse(localStorage.getItem('locations'))] * (d * eD) * airResistRatioArr[JSON.parse(localStorage.getItem('shape'))])
             )
@@ -69,7 +77,7 @@ function calcResult() {
             )
 
     }
-    if (isNaN((maxFallSpeed * 3.6).toFixed(1))) {
+    if (isNaN(maxFallSpeed)) {
         noValueError()
         return
     }else if(isFinite((maxFallSpeed * 3.6).toFixed(1))){
@@ -91,16 +99,6 @@ function calcResistRatio() {
         return resistRatio
     }
     if (JSON.parse(localStorage.getItem('shape')) == 12) {
-        if ((d / eD) < 1) {
-            Swal.fire({
-                title: 'Ошибка!',
-                text: 'Длина должна быть больше чем толщина!',
-                icon: 'error',
-                confirmButtonText: 'Ок'
-            })
-            return
-        }
-
         for (let i = 0; i < airResistRatioTube.length; i++) {
             if (tubeSizes[i] < (d / eD) && tubeSizes[i + 1] >= (d / eD)) {
                 resistRatio = airResistRatioTube[i]

@@ -1,8 +1,8 @@
 function noValueError() {
     Swal.fire({
-        title: 'Невозможно произвести рассчёты!',
-        text: 'Вы не ввели один или несколько параметров!',
+        title: languages[JSON.parse(localStorage.getItem("language"))].js.calcErrorTitle,
+        text: languages[JSON.parse(localStorage.getItem("language"))].js.calcErrorText,
         icon: 'warning',
-        confirmButtonText: 'Ок'
+        confirmButtonText: languages[JSON.parse(localStorage.getItem("language"))].js.confirmBtn,
     })
 }

@@ -529,6 +529,10 @@ body {
         margin-top: 50px;
     }
 
+    .result{
+        font-size: 63px;
+    }
+
     .calculate {
         margin-top: 45px;
     }

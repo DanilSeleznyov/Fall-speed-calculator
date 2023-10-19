@@ -79,7 +79,6 @@ function closeMainDetails() {
 
 function closeSettingsModal() {
     document.querySelector('.modal_settings').style.display = 'none'
-    document.querySelector('.languages_details').close
 }
 
 function openShapesDetails() {
