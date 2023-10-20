@@ -108,7 +108,7 @@ const languages = {
             kmph:'км/год',
             error:'Помилка!',
             sizeError:'Довжина повинна бути більша за товщину!',
-            calcErrorTitle:'Немолжливо виконати розрахунки!',
+            calcErrorTitle:'Неможливо виконати розрахунки!',
             calcErrorText:'Ви не ввели один або декілька параметрів!',
             confirmBtn:'Ок',
         },
